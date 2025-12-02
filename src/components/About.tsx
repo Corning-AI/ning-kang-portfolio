@@ -1,4 +1,68 @@
 import { aboutText, personalInfo } from "@/lib/data";
+import React from "react";
+
+// Link configuration for text replacements
+const linkConfig: { text: string; url: string }[] = [
+  { text: "Dr. Huang Hen-Wei", url: personalInfo.labUrl },
+  { text: "NTU", url: "https://dare-lab.com/kangning.html" },
+  { text: "Shanghai Jiao Tong University", url: "https://en.sjtu.edu.cn/" },
+];
+
+// Function to render paragraph with multiple links
+function renderParagraphWithLinks(paragraph: string): React.ReactNode {
+  const linkClass = "font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300";
+
+  // Find all matches and their positions
+  const matches: { text: string; url: string; index: number }[] = [];
+
+  for (const link of linkConfig) {
+    let searchIndex = 0;
+    let foundIndex = paragraph.indexOf(link.text, searchIndex);
+    while (foundIndex !== -1) {
+      matches.push({ text: link.text, url: link.url, index: foundIndex });
+      searchIndex = foundIndex + link.text.length;
+      foundIndex = paragraph.indexOf(link.text, searchIndex);
+    }
+  }
+
+  if (matches.length === 0) {
+    return paragraph;
+  }
+
+  // Sort matches by position
+  matches.sort((a, b) => a.index - b.index);
+
+  // Build result with links
+  const result: React.ReactNode[] = [];
+  let lastIndex = 0;
+
+  matches.forEach((match, i) => {
+    // Add text before this match
+    if (match.index > lastIndex) {
+      result.push(paragraph.slice(lastIndex, match.index));
+    }
+    // Add the link
+    result.push(
+      <a
+        key={i}
+        className={linkClass}
+        href={match.url}
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        {match.text}
+      </a>
+    );
+    lastIndex = match.index + match.text.length;
+  });
+
+  // Add remaining text
+  if (lastIndex < paragraph.length) {
+    result.push(paragraph.slice(lastIndex));
+  }
+
+  return result;
+}
 
 export default function About() {
   const paragraphs = aboutText.split("\n\n");
@@ -17,35 +81,7 @@ export default function About() {
       <div>
         {paragraphs.map((paragraph, index) => (
           <p key={index} className="mb-4">
-            {paragraph.includes("Dr. Huang Hen-Wei") ? (
-              <>
-                {paragraph.split("Dr. Huang Hen-Wei")[0]}
-                <a
-                  className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
-                  href={personalInfo.labUrl}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  Dr. Huang Hen-Wei
-                </a>
-                {paragraph.split("Dr. Huang Hen-Wei")[1]}
-              </>
-            ) : paragraph.includes("Shanghai Jiao Tong University") ? (
-              <>
-                {paragraph.split("Shanghai Jiao Tong University")[0]}
-                <a
-                  className="font-medium text-slate-200 hover:text-teal-300 focus-visible:text-teal-300"
-                  href="https://www.sjtu.edu.cn/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                >
-                  Shanghai Jiao Tong University
-                </a>
-                {paragraph.split("Shanghai Jiao Tong University")[1]}
-              </>
-            ) : (
-              paragraph
-            )}
+            {renderParagraphWithLinks(paragraph)}
           </p>
         ))}
 
