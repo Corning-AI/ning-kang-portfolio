@@ -147,13 +147,14 @@ export const projects = [
     title: "MHz Drone WPT System",
     description: "Developed a lightweight and robust MHz wireless power transfer system for drone applications with novel coil design and impedance matching techniques.",
     techStack: ["WPT", "RF Design", "Impedance Matching", "Drone Systems"],
-    link: "https://ieeexplore.ieee.org/document/10018267",
+    link: "/papers/drone-wpt-2023.pdf",
     featured: true
   },
   {
     title: "Wireless Capsule Robot Power System",
     description: "Designed wireless power systems for capsule robots enabling wide locomotion range and random orientation via planar transmitting coils.",
     techStack: ["Biomedical", "Robotics", "WPT", "Embedded Systems"],
+    link: "/papers/capsule-robots-2025.pdf",
     featured: true
   }
 ];
