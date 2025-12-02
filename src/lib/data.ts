@@ -140,7 +140,7 @@ export const projects = [
     title: "3D Magnetic Field Shaping System",
     description: "Pioneered a novel 2D planar transmitting coil array that generates controllable 3D magnetic fields for wireless power transfer applications. Received highest reviewer score (9/10) in lab history.",
     techStack: ["MATLAB", "Power Electronics", "Control Systems", "FPGA"],
-    link: "https://ieeexplore.ieee.org/document/9508850",
+    link: "https://ieeexplore.ieee.org/abstract/document/9514396",
     featured: true
   },
   {
