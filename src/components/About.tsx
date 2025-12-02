@@ -4,7 +4,7 @@ import React from "react";
 // Link configuration for text replacements
 const linkConfig: { text: string; url: string }[] = [
   { text: "Dr. Huang Hen-Wei", url: personalInfo.labUrl },
-  { text: "NTU", url: "https://dare-lab.com/kangning.html" },
+  { text: "NTU", url: "https://www.ntu.edu.sg/" },
   { text: "Shanghai Jiao Tong University", url: "https://en.sjtu.edu.cn/" },
 ];
 
