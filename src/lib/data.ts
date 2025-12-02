@@ -116,7 +116,7 @@ export const projects = [
     title: "FluxFlow: High Freedom Wireless Charging",
     description: "World's first omnidirectional wireless charging system using a planar transmitter. One-take demonstration of breakthrough magnetic field control technology.",
     techStack: ["WPT", "Magnetic Field Control", "Power Electronics", "Demo Video"],
-    link: "https://www.youtube.com/watch?v=FluxFlow",
+    link: "https://www.youtube.com/watch?v=n5jzvEmgZy0",
     youtube: true,
     featured: true
   },
@@ -124,7 +124,7 @@ export const projects = [
     title: "FluxFrame: High Speed Control Visualized",
     description: "Visualization of closed-loop detection and control process captured using a Photron SA3 high-speed color camera, demonstrating real-time magnetic field manipulation.",
     techStack: ["FPGA", "High-Speed Control", "Visualization", "Photron SA3"],
-    link: "https://www.youtube.com/watch?v=FluxFrame",
+    link: "https://www.youtube.com/watch?v=-An6sU33iBo",
     youtube: true,
     featured: true
   },
