@@ -7,7 +7,8 @@ export default function MouseGlow() {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      // Use pageX/pageY to account for scroll position
+      setMousePosition({ x: e.pageX, y: e.pageY });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -16,7 +17,7 @@ export default function MouseGlow() {
 
   return (
     <div
-      className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
+      className="pointer-events-none absolute inset-0 z-30 transition duration-300"
       style={{
         background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
       }}
