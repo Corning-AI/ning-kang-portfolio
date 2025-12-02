@@ -34,7 +34,7 @@ export const experiences = [
   {
     title: "Research Fellow",
     company: "Nanyang Technological University",
-    companyUrl: "https://www.ntu.edu.sg/",
+    companyUrl: "https://dare-lab.com/kangning.html",
     location: "Singapore",
     range: "2023 - Present",
     description: "Conduct cutting-edge research on wireless power transfer systems and embedded AI at DARE-Lab. Develop FPGA-based high-speed control algorithms for MHz WPT applications. Lead projects on wireless motors and capsule robot power systems.",
@@ -43,7 +43,7 @@ export const experiences = [
   {
     title: "PhD Researcher",
     company: "Shanghai Jiao Tong University",
-    companyUrl: "https://www.sjtu.edu.cn/",
+    companyUrl: "https://sites.gc.sjtu.edu.cn/dsc/alumni/",
     location: "Shanghai, China",
     range: "2018 - 2023",
     description: "Pioneered 3D magnetic field shaping techniques using 2D planar coil arrays. Developed phase-controlled multi-coil transmitter architectures for wireless power transfer. Published multiple papers in IEEE Transactions on Power Electronics.",
