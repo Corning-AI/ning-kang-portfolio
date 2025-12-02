@@ -22,13 +22,13 @@ export const personalInfo = {
   }
 };
 
-export const aboutText = `Ning Kang is a Research Fellow at Nanyang Technological University, specializing in wireless power transfer systems and embedded AI. His research focuses on the intersection of power electronics and intelligent control, creating innovative solutions for next-generation wireless charging technologies.
+export const aboutText = `I'm a Research Fellow at Nanyang Technological University, specializing in wireless power transfer systems and embedded AI. My research focuses on the intersection of power electronics and intelligent control, creating innovative solutions for next-generation wireless charging technologies.
 
-Currently, he is working under Dr. Huang Hen-Wei at NTU, where he develops MHz-level wireless power transfer systems, FPGA-based high-speed controllers, and AI-enhanced power electronic systems.
+Currently, I'm working under Dr. Huang Hen-Wei at NTU, where I develop MHz-level wireless power transfer systems, FPGA-based high-speed controllers, and AI-enhanced power electronic systems.
 
-He completed his PhD in Electronic Science at Shanghai Jiao Tong University, where he pioneered novel approaches to 3D magnetic field shaping using planar coil arrays. His work has been published in top IEEE journals and has accumulated over 170 citations.
+I completed my PhD in Electronic Science at Shanghai Jiao Tong University, where I pioneered novel approaches to 3D magnetic field shaping using planar coil arrays. My work has been published in top IEEE journals and has accumulated over 170 citations.
 
-His research interests include MIMO wireless power transfer, high-frequency power conversion, motor drives, and the application of machine learning in power electronics.`;
+My research interests include MIMO wireless power transfer, high-frequency power conversion, motor drives, and the application of machine learning in power electronics.`;
 
 export const experiences = [
   {
