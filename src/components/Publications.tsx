@@ -37,10 +37,10 @@ export default function Publications() {
                     <div>
                       <a
                         className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
-                        href={pub.doi ? `https://doi.org/${pub.doi}` : "#"}
+                        href={pub.pdf || (pub.doi ? `https://doi.org/${pub.doi}` : "#")}
                         target="_blank"
                         rel="noreferrer noopener"
-                        aria-label={`${pub.title} (opens in a new tab)`}
+                        aria-label={`${pub.title} (opens PDF in a new tab)`}
                       >
                         <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                         <span>

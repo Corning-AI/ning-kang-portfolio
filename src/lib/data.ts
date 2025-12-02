@@ -61,6 +61,7 @@ export const publications = [
     pages: "10623-10637",
     citations: 5,
     doi: "10.1109/TPEL.2024.3400123",
+    pdf: "/papers/magnetic-field-projection-2024.pdf",
     highlight: true,
     awards: ["IEEE TPEL Cover Paper (Sept. 2024)", "Top 10 First Stage Award - IEEE Global Wireless Power Competition"]
   },
@@ -73,6 +74,7 @@ export const publications = [
     pages: "1172-1184",
     citations: 55,
     doi: "10.1109/TPEL.2021.3104954",
+    pdf: "/papers/3d-magnetic-field-shaping-2021.pdf",
     highlight: true,
     awards: ["Highest Reviewer Score (9/10) in Lab History"]
   },
@@ -84,7 +86,8 @@ export const publications = [
     volume: "59(3)",
     pages: "3851-3864",
     citations: 39,
-    doi: "10.1109/TIA.2023.3241756"
+    doi: "10.1109/TIA.2023.3241756",
+    pdf: "/papers/drone-wpt-2023.pdf"
   },
   {
     title: "A Universal Optimal Drain–Source Voltage Tracking Scheme for Synchronous Resonant Rectifiers in MHz WPT",
@@ -94,7 +97,8 @@ export const publications = [
     volume: "36(5)",
     pages: "5147-5156",
     citations: 29,
-    doi: "10.1109/TPEL.2020.3031134"
+    doi: "10.1109/TPEL.2020.3031134",
+    pdf: "/papers/voltage-tracking-2020.pdf"
   },
   {
     title: "Wireless Powered Capsule Robots With a Wide Locomotion Range and Random Orientation via Planar Transmitting Coils",
@@ -102,7 +106,8 @@ export const publications = [
     journal: "IEEE Robotics and Automation Letters",
     year: 2025,
     citations: 4,
-    doi: "10.1109/LRA.2025.1234567"
+    doi: "10.1109/LRA.2025.1234567",
+    pdf: "/papers/capsule-robots-2025.pdf"
   }
 ];
 
