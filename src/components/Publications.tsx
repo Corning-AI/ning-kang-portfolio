@@ -73,11 +73,18 @@ export default function Publications() {
                     {pub.pages && `, pp. ${pub.pages}`}
                   </p>
 
-                  {pub.highlight && (
-                    <div className="mt-2">
-                      <span className="inline-flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300">
-                        Featured Publication
-                      </span>
+                  {(pub.highlight || pub.awards) && (
+                    <div className="mt-2 flex flex-wrap gap-2">
+                      {pub.highlight && (
+                        <span className="inline-flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium text-teal-300">
+                          Featured Publication
+                        </span>
+                      )}
+                      {pub.awards && pub.awards.map((award: string, i: number) => (
+                        <span key={i} className="inline-flex items-center rounded-full bg-amber-400/10 px-3 py-1 text-xs font-medium text-amber-300">
+                          {award}
+                        </span>
+                      ))}
                     </div>
                   )}
                 </div>

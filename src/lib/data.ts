@@ -53,6 +53,18 @@ export const experiences = [
 
 export const publications = [
   {
+    title: "Magnetic Field Projection and Current Phase Control in a 2-D Planar Transmitting Coil Array",
+    authors: "N. Kang, H. Qin, R. Ma, C.H.T. Lee, M. Liu, C. Ma",
+    journal: "IEEE Transactions on Power Electronics",
+    year: 2024,
+    volume: "39(9)",
+    pages: "10623-10637",
+    citations: 5,
+    doi: "10.1109/TPEL.2024.3400123",
+    highlight: true,
+    awards: ["IEEE TPEL Cover Paper (Sept. 2024)", "Top 10 First Stage Award - IEEE Global Wireless Power Competition"]
+  },
+  {
     title: "Analysis and Implementation of 3D Magnetic Field Shaping via a 2D Planar Transmitting Coil Array",
     authors: "N. Kang, Y. Shao, M. Liu, C. Ma",
     journal: "IEEE Transactions on Power Electronics",
@@ -61,7 +73,8 @@ export const publications = [
     pages: "1172-1184",
     citations: 55,
     doi: "10.1109/TPEL.2021.3104954",
-    highlight: true
+    highlight: true,
+    awards: ["Highest Reviewer Score (9/10) in Lab History"]
   },
   {
     title: "A Lightweight and Robust Drone MHz WPT System via Novel Coil Design and Impedance Matching",
@@ -84,16 +97,6 @@ export const publications = [
     doi: "10.1109/TPEL.2020.3031134"
   },
   {
-    title: "Magnetic Field Projection and Current Phase Control in a 2-D Planar Transmitting Coil Array",
-    authors: "N. Kang, H. Qin, R. Ma, C.H.T. Lee, M. Liu, C. Ma",
-    journal: "IEEE Transactions on Power Electronics",
-    year: 2024,
-    volume: "39(9)",
-    pages: "10623-10637",
-    citations: 5,
-    doi: "10.1109/TPEL.2024.3400123"
-  },
-  {
     title: "Wireless Powered Capsule Robots With a Wide Locomotion Range and Random Orientation via Planar Transmitting Coils",
     authors: "T. Zheng, N. Kang, C.H.T. Lee, L. Shao",
     journal: "IEEE Robotics and Automation Letters",
@@ -105,6 +108,22 @@ export const publications = [
 
 export const projects = [
   {
+    title: "FluxFlow: High Freedom Wireless Charging",
+    description: "World's first omnidirectional wireless charging system using a planar transmitter. One-take demonstration of breakthrough magnetic field control technology.",
+    techStack: ["WPT", "Magnetic Field Control", "Power Electronics", "Demo Video"],
+    link: "https://www.youtube.com/watch?v=FluxFlow",
+    youtube: true,
+    featured: true
+  },
+  {
+    title: "FluxFrame: High Speed Control Visualized",
+    description: "Visualization of closed-loop detection and control process captured using a Photron SA3 high-speed color camera, demonstrating real-time magnetic field manipulation.",
+    techStack: ["FPGA", "High-Speed Control", "Visualization", "Photron SA3"],
+    link: "https://www.youtube.com/watch?v=FluxFrame",
+    youtube: true,
+    featured: true
+  },
+  {
     title: "AI vs Human LaTeX Engineering",
     description: "A comprehensive IEEE top journal LaTeX project demonstrating advanced typesetting techniques. Validated by Claude Opus 4.5 as meeting or exceeding top-tier AI capabilities.",
     techStack: ["LaTeX", "IEEE Format", "Technical Writing"],
@@ -114,7 +133,7 @@ export const projects = [
   },
   {
     title: "3D Magnetic Field Shaping System",
-    description: "Pioneered a novel 2D planar transmitting coil array that generates controllable 3D magnetic fields for wireless power transfer applications.",
+    description: "Pioneered a novel 2D planar transmitting coil array that generates controllable 3D magnetic fields for wireless power transfer applications. Received highest reviewer score (9/10) in lab history.",
     techStack: ["MATLAB", "Power Electronics", "Control Systems", "FPGA"],
     link: "https://ieeexplore.ieee.org/document/9508850",
     featured: true
