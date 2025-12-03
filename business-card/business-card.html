@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ning Kang - Business Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #e8e8e8;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+
+        h2 {
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Business Card - 90mm x 55mm at 300dpi = 1063 x 650 px, scaled down for screen */
+        .card {
+            width: 360px;  /* 90mm scaled */
+            height: 220px; /* 55mm scaled */
+            background: #ffffff;
+            border-radius: 4px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* ==================== FRONT SIDE ==================== */
+        .card-front {
+            padding: 20px 24px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+        }
+
+        .card-front .logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .card-front .logo {
+            height: 44px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .card-front .logo-sjtu {
+            height: 50px;
+        }
+
+        .card-front .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card-front .name {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+        }
+
+        .card-front .title {
+            font-size: 14px;
+            font-weight: 500;
+            color: #555;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .card-front .divider {
+            width: 50px;
+            height: 2px;
+            background: #0077b5;
+            margin: 0 auto 16px;
+        }
+
+        .card-front .institution {
+            font-size: 12px;
+            font-weight: 600;
+            color: #333;
+            letter-spacing: 0.3px;
+        }
+
+        .card-front .location {
+            font-size: 11px;
+            font-weight: 400;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        /* ==================== BACK SIDE ==================== */
+        .card-back {
+            padding: 20px 22px;
+            display: flex;
+            height: 100%;
+            background: #ffffff;
+        }
+
+        .card-back .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .card-back .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 11px;
+            color: #222;
+            font-weight: 500;
+        }
+
+        .card-back .contact-item .icon {
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            border-radius: 4px;
+            font-size: 11px;
+        }
+
+        .card-back .contact-item .icon svg {
+            width: 12px;
+            height: 12px;
+            fill: #333;
+        }
+
+        .card-back .contact-item a {
+            color: #222;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .card-back .contact-item a:hover {
+            border-bottom-color: #0077b5;
+        }
+
+        .card-back .research {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid #e5e5e5;
+        }
+
+        .card-back .research-label {
+            font-size: 9px;
+            font-weight: 700;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 6px;
+        }
+
+        .card-back .research-areas {
+            font-size: 10px;
+            color: #444;
+            line-height: 1.6;
+            font-weight: 500;
+        }
+
+        .card-back .qr-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-left: 16px;
+            border-left: 1px solid #eee;
+            margin-left: 16px;
+        }
+
+        .card-back .qr-code {
+            width: 85px;
+            height: 85px;
+            background: #fff;
+            border: 2px solid #0077b5;
+            border-radius: 6px;
+            padding: 4px;
+        }
+
+        .card-back .qr-label {
+            font-size: 8px;
+            font-weight: 600;
+            color: #0077b5;
+            margin-top: 8px;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==================== PRINT STYLES ==================== */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .card {
+                box-shadow: none;
+                border: 1px solid #ccc;
+                page-break-inside: avoid;
+                margin: 10mm;
+            }
+
+            h2, .instructions {
+                display: none;
+            }
+        }
+
+        /* ==================== INSTRUCTIONS ==================== */
+        .instructions {
+            max-width: 400px;
+            background: #fff;
+            padding: 24px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-size: 13px;
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .instructions h3 {
+            color: #333;
+            margin-bottom: 14px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        .instructions ol {
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin-bottom: 10px;
+        }
+
+        .instructions code {
+            background: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <h2>FRONT SIDE</h2>
+        <div class="card card-front">
+            <div class="logos">
+                <!-- NTU Logo -->
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c6/Nanyang_Technological_University.svg/1200px-Nanyang_Technological_University.svg.png" alt="NTU" class="logo">
+                <!-- SJTU Logo (Red) -->
+                <img src="https://raw.githubusercontent.com/weijianwen/SJTU-logo-banner/master/SJTU_LOGO/PNG/sjtulogored.png" alt="SJTU" class="logo logo-sjtu">
+            </div>
+            <div class="main-content">
+                <div class="name">NING KANG</div>
+                <div class="title">Research Fellow</div>
+                <div class="divider"></div>
+                <div class="institution">Nanyang Technological University</div>
+                <div class="location">Singapore</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <h2>BACK SIDE</h2>
+        <div class="card card-back">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                    </span>
+                    <a href="mailto:ning.kang@ntu.edu.sg">ning.kang@ntu.edu.sg</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </span>
+                    <a href="https://corning-ai.com" target="_blank">corning-ai.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </span>
+                    <a href="https://github.com/Corning-AI" target="_blank">github.com/Corning-AI</a>
+                </div>
+                <div class="research">
+                    <div class="research-label">Research Areas</div>
+                    <div class="research-areas">
+                        Wireless Power Transfer | Embedded AI<br>
+                        Power Electronics | FPGA Control
+                    </div>
+                </div>
+            </div>
+            <div class="qr-section">
+                <!-- QR Code for LinkedIn -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://www.linkedin.com/in/ning-kang-ntu&bgcolor=ffffff&color=0077b5" alt="LinkedIn QR" class="qr-code">
+                <div class="qr-label">LINKEDIN</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="instructions">
+        <h3>Export as PDF for Printing</h3>
+        <ol>
+            <li>Press <code>Ctrl+P</code> (or <code>Cmd+P</code> on Mac)</li>
+            <li>Select <strong>"Save as PDF"</strong> as destination</li>
+            <li>Set margins to <strong>"None"</strong></li>
+            <li>Enable <strong>"Background graphics"</strong></li>
+            <li>Click Save</li>
+        </ol>
+        <p style="margin-top: 14px; font-size: 11px; color: #888;">
+            Standard size: 90mm × 55mm. For professional printing, send the PDF to a print shop.
+        </p>
+    </div>
+
+</body>
+</html>
