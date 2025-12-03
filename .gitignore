@@ -42,3 +42,6 @@ next-env.d.ts
 
 # conversation notes (private)
 /conversation-notes
+
+# business card design (private)
+/business-card
